@@ -41,7 +41,7 @@ func init() {
 		orm.RegisterDataBase(dbAlias, dbType, dataSource)
 
 	case "mysql":
-		dbCharset := beego.AppConfig.String(dbType + "db_charset")
+		dbCharset := beego.AppConfig.String(dbType + "::db_charset")
 		dataSource := dbUser + ":" + dbPwd + "@/" + dbName + "?charset=" + dbCharset
 		orm.RegisterDataBase(dbAlias, dbType, dataSource)
 	case "sqlite3":
